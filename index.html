@@ -7,65 +7,80 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <title>WCC Portfolio</title>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.min.js"></script>
         <link rel="stylesheet" href="./css/style.css">
 
     </head>
     <body>
-
+        <script src="./javascript/sketch.js"></script>
         <header>
-            <h1>My Name</h1>
+            <h1 class="logo">
+                ZISHI TU    
+            </h1>
+            <div id="topRight" >
+                <nav> This is the personal online portfolio made by Youcy Chen</nav> 
+            </div>
+            
 
         </header>
 
         <main>
-            <h3>Term 1</h3>
-            <section class="flex-container">
-                <div class="flex-item"> 
-                    <a href="./html-demo-page">
-                        <h4>Demo Page</h4>
-                    </a>
-                </div>
-            </section>
+            
+            <div id="elements-container">
+                <div  class="fontInside">
+                    <h3>Term 1</h3>
+                    <section class="flex-container">
+                        <div class="flex-item"> 
+                            <a href="./html-demo-page">
+                            </a>
+                            <h4>Demo Page</h4>
+                        </div>
 
-            <h3>Term 2</h3>
-            <section class="flex-container">
+                        <div class="flex-item"> 
+                            <a href="https://zishi-debug.github.io/Kiki-do-you-love-me_term1_final-project/">
+                                
+                            </a>
+                            <h4 >Kiki do you love me?</h4>
+                        </div>
+                        
+                    </section>
 
-                <div class="flex-item"> 
-                    <a href="https://rebecca-aston.github.io/hypertext-concrete-poetry/">
-                        <h4>1. Hypertext Concrete Poem</h4>
-                    </a>
-                </div>
-         
-                <div class="flex-item"> 
-                    <a href="https://rebecca-aston.github.io/simple-responsive-3D/">
-                        <h4>2. Simple Responsive p5 Code Example </h4>
-                    </a>
-                </div>
+                    <h3>Term 2</h3>
+                    <section class="flex-container">
 
-                <div class="flex-item"> 
-                    <a href="#">
-                        <h4>3.</h4>
-                    </a>
-                </div>
-
-                <div class="flex-item"> 
-                    <a href="#">
-                        <h4>4.</h4>
-                    </a>
-                </div>
-
-                    <!-- Keep adding per week -->
-
+                        <div class="flex-item"> 
+                            <a href="https://rebecca-aston.github.io/hypertext-concrete-poetry/">
+                                
+                            </a>
+                            <h4 >Hypertext Concrete Poem</h4>
+                        </div>
                 
-            </section> 
+                        <div class="flex-item"> 
+                            <a href="https://rebecca-aston.github.io/simple-responsive-3D/">
+                               
+                            </a>
+                            <h4>Simple Responsive p5 Code Example </h4>
+                        </div>
 
+                    
+                            <!-- Keep adding per week -->
+
+                        
+                    </section>   
+                </div>
+                
+                <div id="sketch-container">
+                </div>
+
+            </div>
         </main>
         <footer>
            <!-- normally information like contact details etc  -->
            <!-- read more about semantic HTML https://www.w3schools.com/html/html5_semantic_elements.asp -->
            
         </footer>
+        
 
     </body>
 </html>
