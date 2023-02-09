@@ -189,6 +189,10 @@ footer{
     /* body {
       background-color: blue;
     } */
+    
+    #sketch-container {
+        display:none;
+    }
 
     .flex-item{
         flex-basis: 100%; /*width of the box, take up a quarter of the parent's size*/
