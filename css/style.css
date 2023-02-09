@@ -53,9 +53,9 @@ footer{
   }
 
 #topRight{
-    color: aqua;
+     color: aqua;
     font-family: "Fantasy", "Courier New", monospace;
-   
+    
 }
 
 /* Flex layouts are one of the easier ways to style responsive layouts that work on all devices */
@@ -84,7 +84,7 @@ footer{
     width: 100%;
     height: 0;
     padding: 30% 0;
-    background-image: url(../assets/images/thumbnail3.png); /*change the image to one of you choice */
+    /*change the image to one of you choice */
     background-position: center;
     background-size: 100%;
     justify-content: center;
@@ -97,6 +97,22 @@ footer{
 
 /* want a different background image for each project? */
 /* try give each a tag a unique id in your HTML and then set different background images here*/
+.flex-item a#mess{
+    background-image: url(../assets/images/mess_thumbnail.png);
+}
+.flex-item a#kiki{
+    background-image: url(../assets/images/thumbnail3.png);
+}
+.flex-item a#poem{
+    background-image: url(../assets/images/poem.thumbnail.png);
+}
+.flex-item a#pet{
+    background-image: url(../assets/images/pet_thumbnail.png);
+}
+.flex-item a#scrape{
+    background-image: url(../assets/images/Anime_eye.svg.png);
+}
+
 /* EXAMPLE CSS: won't work if you just un-comment this:*/
 /* .flex-item a#my-special-id{
     background-image: url(../assets/images/custom-image-name.jpeg); 
@@ -125,6 +141,12 @@ footer{
     color: aqua;
     font-family: "Fantasy", "Courier New", monospace;
     text-align: center;
+}
+
+.fontInside p{
+    color: aqua;
+    font-family: "Fantasy", "Courier New", monospace;
+  
 }
 
 
