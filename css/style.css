@@ -112,6 +112,9 @@ footer{
 .flex-item a#scrape{
     background-image: url(../assets/images/Anime_eye.svg.png);
 }
+.flex-item a#sanity{
+    background-image: url(../assets/images/sanity_thumbnail.png);
+}
 
 /* EXAMPLE CSS: won't work if you just un-comment this:*/
 /* .flex-item a#my-special-id{
@@ -178,7 +181,10 @@ footer{
     /* body {
       background-color: rgb(255, 0, 191);
     } */
-
+ 
+    #sketch-container {
+        display:none;
+    }
     .flex-item{
         flex-basis: 50%; /*width of the box, take up a quarter of the parent's size*/
     }
