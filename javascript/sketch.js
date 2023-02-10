@@ -20,5 +20,4 @@ function setup() {
     texture(CmcM);
     model(Cmc);
     pop();
-
   }
