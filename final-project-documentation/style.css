@@ -7,26 +7,49 @@ body{
     background-color: rgb(43, 163, 255);
 }
 
-h1{
-    font-size: 30px;
-    
+header h1{
+    font-size: 35px;
+    margin:20px 0;
+}
+header h2{
+    font-size: 20px;
+    margin: 0px 0px 40px 0px;
+    font-weight: normal;
+    font-style: italic;
 }
 
+main.documentation-page h3{
+    margin-top: 40px;
+}
+
+li{
+    font-family: "Fantasy", "Courier New", monospace;
+    font-size: 16px;
+    line-height: 1.6em;
+}
 p{
     font-size: 16px;
+    line-height: 1.6em;
+    margin: 2.5em 0;
+    font-family: "Fantasy", "Courier New", monospace;
 }
 
+main,
 header{
-    padding:0 3%;
-}
-
-main{
     width:100%;
     max-width:1400px; /* means it won't be larger than 1200px on larger screens */
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 3%;
+    padding: 30px 3%;
+}
 
+header.documentation-header{
+    padding: 0 3%;
+}
+
+.documentation-header section,
+main.documentation-page section{
+    margin: 10px 10%;
 }
 
 footer{
@@ -34,29 +57,43 @@ footer{
     min-height:100px;
 }
 
-#sketch-container{
-    position: relative;
-    bottom: 0;
-    left: 10px;
-    z-index: 100;
-    padding: 10px;
-  }
 
-#elements-container{
-   
-    width: 100%;
-    height: 100%;
-    top: 1000px;
-    left: 10px;
-    display: grid;
-    grid-template-columns: auto auto;
-  }
-
-#topRight{
-     color: aqua;
-    font-family: "Fantasy", "Courier New", monospace;
-    
+nav{
+    padding:10px 3%;
 }
+
+nav a{
+    color: black;
+    text-decoration: none;
+}
+nav a:hover{
+    color: grey;
+}
+
+.center-text{
+    text-align: center;
+}
+
+img{
+    width: 100%;
+}
+
+/* original aspect ratio width="640" height="360" */
+.responsive-video{
+    position: relative;
+    width: 100%; /* adjust this and the padding-top to change how big it is*/
+    height: 0;
+    padding-top: 57%; /* padding top is in reltation to the width of parent, it preserves aspect ratio*/
+    /* margin: 0 auto; */ /*this would center your video in the section container*/
+}
+.responsive-video iframe{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+}
+
 
 /* Flex layouts are one of the easier ways to style responsive layouts that work on all devices */
 /* https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox */
@@ -72,11 +109,17 @@ footer{
     /* the following three items can be put on one line: https://developer.mozilla.org/en-US/docs/Web/CSS/flex */
     flex-grow: 0;
     flex-shrink: 0;
-    flex-basis: 40%; /*width of the box, take up a quarter of the parent's size*/
+    flex-basis: 25%; /*width of the box, take up a quarter of the parent's size*/
     box-sizing: border-box; /*this means that we can add padding, line below, and still only take 25% width of parent*/
-    padding: 10px;
-    flex-flow: row wrap;
-    
+    padding: 5px;
+}
+
+.flex-basis-third .flex-item{
+    flex-basis: 33.33%; 
+}
+
+.flex-basis-half .flex-item{
+    flex-basis: 50%; 
 }
 
 .flex-item a{
@@ -84,7 +127,7 @@ footer{
     width: 100%;
     height: 0;
     padding: 30% 0;
-    /*change the image to one of you choice */
+    background-image: url(../assets/images/lightgrey-line.jpeg); /*change the image to one of you choice */
     background-position: center;
     background-size: 100%;
     justify-content: center;
@@ -97,25 +140,6 @@ footer{
 
 /* want a different background image for each project? */
 /* try give each a tag a unique id in your HTML and then set different background images here*/
-.flex-item a#mess{
-    background-image: url(../assets/images/mess_thumbnail.png);
-}
-.flex-item a#kiki{
-    background-image: url(../assets/images/thumbnail3.png);
-}
-.flex-item a#push{
-    background-image: url(../assets/images/push_thumbnail.jpg);
-}
-.flex-item a#sensing{
-    background-image: url(../assets/images/sensing_thumbnail.jpg);
-}
-.flex-item a#scrape{
-    background-image: url(../assets/images/Anime_eye.svg.png);
-}
-.flex-item a#sanity{
-    background-image: url(../assets/images/sanity_thumbnail.png);
-}
-
 /* EXAMPLE CSS: won't work if you just un-comment this:*/
 /* .flex-item a#my-special-id{
     background-image: url(../assets/images/custom-image-name.jpeg); 
@@ -129,27 +153,8 @@ footer{
 
 .flex-item h4{
    margin:10px;
-  
+   background-color: white;
    padding:5px 10px;
-}
-
-.fontInside h3{
-   
-    font-family: "Fantasy", "Courier New", monospace;
-    font-size: 30px;
-
-}
-
-.fontInside h4{
-    color: aqua;
-    font-family: "Fantasy", "Courier New", monospace;
-    text-align: center;
-}
-
-.fontInside p{
-    color: aqua;
-    font-family: "Fantasy", "Courier New", monospace;
-  
 }
 
 
@@ -174,6 +179,11 @@ footer{
       background-color: rgb(255, 81, 0);
     } */
 
+    .documentation-header section,
+    main.documentation-page section{
+        margin: 40px 5%;
+    }
+
 }
 
 /* Medium */
@@ -181,10 +191,7 @@ footer{
     /* body {
       background-color: rgb(255, 0, 191);
     } */
- 
-    #sketch-container {
-        display:none;
-    }
+
     .flex-item{
         flex-basis: 50%; /*width of the box, take up a quarter of the parent's size*/
     }
@@ -195,10 +202,6 @@ footer{
     /* body {
       background-color: blue;
     } */
-    
-    #sketch-container {
-        display:none;
-    }
 
     .flex-item{
         flex-basis: 100%; /*width of the box, take up a quarter of the parent's size*/
