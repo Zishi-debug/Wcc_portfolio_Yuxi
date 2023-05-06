@@ -12,8 +12,10 @@ function setup() {
   
   function draw() {
     orbitControl(2, 1, 0.1);
-    background(43,163,255,0);
-    //circle(width/2,height/2,100);
+    background(43,163,255);
+   //background(255);
+    // fill(0);
+    // circle(width/2,height/2,100);
     push();
     scale(20,-20,20);
     translate(0,-5,0);

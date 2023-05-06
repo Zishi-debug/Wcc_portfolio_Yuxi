@@ -19,86 +19,137 @@
         </nav>
         <header class="documentation-header">
             <section class="center-text">
-                <h1>Work Title</h1>
-                <h2>by Your Name</h6>
-                <p>Write a one-sentence summary of what the project is.</p> 
+                <h1>The Maiden's Tomb</h1>
+                <h2>by Yuxi Chen</h6>
+                <p>It is aninteractive web visual novel</p> 
             </section>
         </header>
 
         <main class="documentation-page">
             <section>
                 <div class="responsive-video centered-content">
-                    <iframe title="vimeo-player" src="https://player.vimeo.com/video/644036051?h=b260a3b1b0" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/822844434?h=d639c581f1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1752" height="1132" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Maiden&amp;rsquo;s Tomb"></iframe>
                 </div>
             </section>
             <section>
                 <h3>Introduction</h3>
-                <p>Write a short introduction, a short paragraph, giving a bit more detail about what the project is.</p>
+                <p>This project is a chapter in an interactive novel that tells the story of a girl who, as a streamer, became lost in the virtual world. After her passing, her body was buried, but her two personalities' souls still wait in front of her grave, hoping to find someone to tell their story. By clicking on the disk in the picture, you can listen to her tale.
+                </p>
             </section>
             <section>
                 <h3>Concept and Background Research</h3>
                 
-                <p>Write about the concept behind the project, in other words the creative or theoretical inspiration. Include details about any background research you may have done (don’t forget to include references in the reference section).</p>
-                <p>Consider writing about your work in relation to a creative, theoretical or computational tradition that you may be taking inspiration from, in other words think about how your work is situated in a particular making tradition. </p>
+                <p>The idea originally came from my motion capture work from last term, in fact, I have used all the assignments for this semester to expand this story, but in different forms of expression. Our previous project is a Visual Novel Game (a form of digital semi-interactive fiction, combine a textual narrative with static or animated illustrations and a varying degree of interactivity ), the player portrays a girl who works as a live streamer, and becomes deeply immersed in her online virtual persona, losing touch with the real world. After being abandoned by her fans, she becomes lost in the virtual world and eventually descends into madness, ultimately choosing to commit suicide.
+                </p>
+                <p>Our Unity game allows players to explore the girl's room and follow her story from the beginning of her livestreaming career to her descent into madness after being betrayed by her fans. In Andy's class, I used Plotter to create a new ending for this story where the girl, Abra, chooses to face reality. However, in this project, the girl still chooses death. In the original ending, Abra's betrayal by her fans causes her to go mad. Ironically, after her death, her subscribers  grows a lot. 
+                </p>
+                <p>I want to explore the delicate and fragile symbiotic relationship between virtual idols and their fans. To fans, idols are like gods, and their love for idols is a kind of platonic love for a purely virtual character. In other word, Idols are also constrained by their fans, and fan worship does not require idols to act as human beings or even exist in reality. The girl Maho, as a vtuber, the protagonist of this story is already at the intersection of the virtual and the real. When she is betrayed by her fans, she loses herself in her virtual persona and falls into madness. Even though her physical body is buried underground, her fans' love for her virtual persona persists, and it becomes disconnected from her identity as a real human. This project portrays the scene of the beloved girl's soul returning to the world.
+                </p>
+                <p>I think this story is well-suited for an interactive visual novel on a website. Inspired by the game Needy Girloverload, my work also has two personas (Abra and Maho) narrating the story simultaneously. In the current scene, the two personas are represented by the two heads that grow from the grave. The story is based on the diary of the girl from our original game.
+                </p>
+                <p>In terms of visual style, I was mainly inspired by the works of the Japanese painter Aida Makoto. In his works, anime girls with bright smiles create an atmosphere of eerie and bloody horror. I like using cute 2D anime characters to convey a sense of strangeness, terror, and madness. The artistic expression of this project is currently my favorite exploration.
+                </p>
                 
-                <!-- if you have a full width image try make it not too tall -->
-                <img src="../assets/images/repeating-diagonal-lines-strip.jpeg"/>
+                  <!-- example of styling for three images, you can write your own styling -->
+                <div class="flex-container flex-basis-third">
+                    <div class="flex-item">
+                        <img src="../assets/images/final project/19_2_AshColorMountains_detail-2.jpg"/>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../assets/images/final project/0220761ec3db2ec886bd12f320f9b6d8.jpg"/>
+                    </div>
+                    <div class="flex-item">
+                        <img src="../assets/images/final project/m25454-7e47de2ee046a8d19c4df29b05dca767.jpg"/>
+                    </div>
+                </div>
                 
             </section>
             <section>
                 <h3>Technical Implementation</h3>
+                <h4>Modelling part</h4>
 
-                <!-- example of styling for three images, you can write your own styling -->
-                <div class="flex-container flex-basis-third">
-                    <div class="flex-item">
-                        <img src="../assets/images/repeating-diagonal-lines-square.jpeg"/>
-                    </div>
-                    <div class="flex-item">
-                        <img src="../assets/images/repeating-diagonal-lines-square.jpeg"/>
-                    </div>
-                    <div class="flex-item">
-                        <img src="../assets/images/repeating-diagonal-lines-square.jpeg"/>
-                    </div>
-                </div>
+                <h5>*blendshapes and facial mocap</h5>   
+                <p>I created 52 morph targets for my model, originally intending to use websockets to upload data and control the morph targets in real-time. However, I ended up recording animations and storing them as clips within the glb file instead. 
+                </p>
+
+                <img src="../assets/images/pdf/WX20230506-154427@2x.png"alt="morph Targets" style="width:80%"/>
+
+                <h5>*Animations</h5>
+                <p>There are two kind of animation in this project. One is morph targets animation, I recorded by facemotion3d, others are skeleton animations which are made in blender.
+                </p>
+                <img src="../assets/images/pdf/image-007.png"alt="nla editor" style="width:80%"/>
+
+                <h5>*optimization model</h5>
+                <p>I use glTF files that I export to three.js, which works great for webGL. Simplifying the models is very important for models used in web pages, because my models have complex morph targets and the mesh count of the facial features can't be too low. I tried using draco to compress the files, but it didn't work well and caused some loss of morph targets. Eventually, I had to manually reduce the mesh count.
+                </p>
+                <img src="../assets/images/pdf/model optimization.png"alt="optimization model" style="width: 80%"/>
+
+                <h5>*Textures</h5>
+                <p>I used a high poly model to make textures in substance painter，then mapped textures on a low poly model. To achieve the Toon effect, I also added an outline into this model.
+                </p>
+                <img src="../assets/images/pdf/outline.png"alt="outline" style="width: 80%"/>
+
+                <h4>Three.js part</h4>
+                <p>Initially, my plan was to use facemotion3d, an iOS-based facial capture app, to control the shape keys of my tahree.js model. This app is widely used in the VTuber live streaming industry as a stable facial capture software, and it can transmit JSON files to software such as Unity. However, after trying for several days, I was not successful in using it on a web page.</br>
+                    After that, I decided to go with the approach of interacting with objects in the scene and playing animations. At the same time, I also considered using it as an installation in exhibitions.                     
+                </p>
+
+                <h5>*diaglogue box</h5>
+                <p>Initially, my plan was to use facemotion3d, an iOS-based facial capture app, to control the shape keys of my tahree.js model. This app is widely used in the VTuber live streaming industry as a stable facial capture software, and it can transmit JSON files to software such as Unity. However, after trying for several days, I was not successful in using it on a web page.</br>
+                    After that, I decided to go with the approach of interacting with objects in the scene and playing animations. At the same time, I also considered using it as an installation in exhibitions.                     
+                </p>
+                <img src="../assets/images/pdf/dialogue box.gif"alt="dialogue box" style="width: 80%"/>
+
+                <h5>*Skeleton follow mousemove</h5>
+                <p>By controling the rotation degree of neck and waist bones base on mouse position, I can make the heads follow my mouse.
+                </p>
+                <img src="../assets/images/pdf/head follow mouse.gif"alt="heads follow mouse" style="width: 80%"/>
                 
-                <p>Write about the process of implementing your project. What technical elements or hardware are involved in your system. Write about why you made certain technical or design decisions etc. </p>
-            
-                <!-- example of styling for three images, you can write your own styling -->
-                <div class="flex-container flex-basis-half">
-                    <div class="flex-item">
-                        <img src="../assets/images/repeating-diagonal-lines-rect.jpeg"/>
-                    </div>
-                    <div class="flex-item">
-                        <img src="../assets/images/repeating-diagonal-lines-rect.jpeg"/>
-                    </div>
-                </div>
+                <h5>*Play animation</h5>
+                <p>Firstly, convert animations inside the glb file into three.js clips and store them inside an array called possible animation. I want the heads move based on mouse position when play all of these animations , so I need to splice neck bones and waist bones from all clipsI want the heads move based on mouse position when play all of these animations , so I need to splice neck bones and waist bones in all clips. Function raycast here is used for picking up models by shooting layers with mouse at models.
+                    If you pick the right object in the scene, the code plays animation by function playOnClick.
+                    Basically there are three animations when a user clicks the disk: blendshapes animation, skeleton animation and disk insert animation. Function playOnClick is used to play animation from an array.
+                    
+                </p>
+                <img src="../assets/images/pdf/play animations.gif"alt="play animations" style="width: 80%"/>
 
-                <!-- default flex item is for 4 & follows media query styling for home page -->
-                <div class="flex-container">
-                    <div class="flex-item">
-                        <img src="../assets/images/repeating-diagonal-lines-rect.jpeg"/>
-                    </div>
-                    <div class="flex-item">
-                        <img src="../assets/images/repeating-diagonal-lines-rect.jpeg"/>
-                    </div>
-                    <div class="flex-item">
-                        <img src="../assets/images/repeating-diagonal-lines-rect.jpeg"/>
-                    </div>
-                    <div class="flex-item">
-                        <img src="../assets/images/repeating-diagonal-lines-rect.jpeg"/>
-                    </div>
-                </div>
+                <h5>*Joystick</h5>
+                <p>I wanted to make the exhibition more interactive, rather than relying solely on mouse control, so I looked into using a joystick and buttons, similar to a vintage game controller, for user interaction.  The bottom is used as keys, so I added keyboard function which can call function playdisk as well.
+                    
+                </p>
+                <img src="../assets/images/pdf/joysticks.png"alt="joystikes" style="width: 80%"/>
          
             </section>
             <section>
                 <h3>Reflection and Future Development</h3>
-                <p>Reflect on how the project went, what went well, what you learnt etc. Based on these reflections, conclude with how you would further develop this project if you were to make another version or how you would further develop your ideas.</p>
+                <p>I have always been interested in 3D animation and NPR render effects, such as toon shading or anime-style animation. However, before this term, I have always created animations in Blender and just rendered videos, without exploring how to incorporate them into interactive experiences or art installations. Therefore, even though this project didn't achieve my initial vision for interactivity, being able to showcase my model in WebGL and have real-time interaction still excited me.</br>
+                    During this project, I encountered many challenges, from implementing stylized shader in Three.js to controlling bone and blendshapes and playing preset animations. Despite having only one week to complete the project, and some regrettable limitations, I worked hard and learned a lot. Now, I am very familiar with the workflow from Blender to Three.js. I also spent a lot of time designing the textures the model. Although this course should focus more on coding part, I also am very satisfied with the visual impact of the slightly eerie girl in this project. I hope to have the opportunity to finish her story in the future.</br>
+                    Overall, I am very pleased with this experiment and it has provided me with the first step in establishing more complex and interesting interactions in Three.js in the future.</br>
+                    </p>
             </section>
             <section>
                 <h3>References</h3>
                 <ul>
-                    <li>Technical Reference example. Include link where possible.</li>
-                    <li>Conceptual Reference example. Include link where possible.</li>
+                    <li>S. Kon, Director, Perfect Blue, 1997 [Film]. Japan: Rex Entertainment, 1997.
+                    </li>
+                    <li>“Needy Girl Overdose”.[Online] Available:<a href="https://vi.wikipedia.org/wiki/Needy_Girl_Overdose">https://vi.wikipedia.org/wiki/Needy_Girl_Overdose</a>
+                    </li>
+                    <li>Three.js document and examples:</br>
+                        <a href="https://threejs.org/examples/#webgl_animation_keyframes">https://threejs.org/examples/#webgl_animation_keyframes</a></br>
+                        <a href="https://threejs.org/docs/#api/en/audio/Audio">https://threejs.org/docs/#api/en/audio/Audio</a></br>
+                        <a href="https://threejs.org/examples/?q=morph#webgl_morphtargets_face">https://threejs.org/examples/?q=morph#webgl_morphtargets_face</a></br>
+                        <a href="https://moments.epic.net/#home">https://moments.epic.net/#home</a></br>
+                    </li>
+                    <li>“How to Create an Interactive 3D Character with Three.js  
+                        By Kyle Wetton in Tutorials on October 14, 2019
+                        <a href="How to Create an Interactive 3D Character with Three.js | Codrops">How to Create an Interactive 3D Character with Three.js | Codrops</a>
+                    </li>
+                    <li>Arduino reference</br>
+                        <a href="https://www.arduino.cc/reference/en/language/functions/usb/keyboard/">https://www.arduino.cc/reference/en/language/functions/usb/keyboard/</a></br>
+                        <a href="https://docs.arduino.cc/built-in-examples/usb/KeyboardAndMouseControl">https://docs.arduino.cc/built-in-examples/usb/KeyboardAndMouseControl</a></br>
+                    </li>
+                    <li>dialogue box: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog</a>
+                    </li>
                 </ul>
             </section>
         </main>
