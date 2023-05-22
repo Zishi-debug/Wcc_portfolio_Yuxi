@@ -115,6 +115,9 @@ footer{
 .flex-item a#sanity{
     background-image: url(../assets/images/sanity_thumbnail.png);
 }
+.flex-item a#Cube{
+    background-image: url(../assets/images/noiseCube_thumbnail.png);
+}
 .flex-item a#Tomb{
     background-image: url(../assets/images/finalproject_thumbnail.png);
 }
